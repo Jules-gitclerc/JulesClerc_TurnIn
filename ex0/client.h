@@ -26,4 +26,7 @@ typedef struct Client {
 #define BUFF 1024
 
 extern Client *c;
+
+Client *connectAsClient(char *ip);
+int receiveData(Client *c, char *buffer);
 #endif //UNTITLED_CLIENT_H

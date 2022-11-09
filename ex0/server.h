@@ -32,4 +32,9 @@ extern void *welcomeMessage;
 extern int welcomeSize;
 extern Server *s;
 
+Server* setUpConnections();
+void closeServer(Server *s);
+void sendAll(Server *s, char *buffer, int current);
+int addNewClient(Server *s);
+int serverSendReceive(Server *s, char *buffer);
 #endif //UNTITLED_SERVER_H

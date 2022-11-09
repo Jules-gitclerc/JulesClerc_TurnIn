@@ -4,7 +4,7 @@ Server *s = NULL;
 void *welcomeMessage = NULL;
 int welcomeSize = 0;
 
-Server *setUpServerConnection() {
+Server *setUpConnections() {
     Server *s = calloc(sizeof(Server), 1);
     s->sock = socket(AF_INET, SOCK_STREAM, 0);
     s->addr.sin_family = AF_INET;
@@ -32,7 +32,7 @@ void closeServer(Server *s) {
 }
 
 
-int serverSendReceive(Server *s, void *buffer) {
+int serverSendReceive(Server *s, char *buffer) {
     fd_set readfds;
     FD_ZERO(&readfds);
     FD_SET(s->sock, &readfds);

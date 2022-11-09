@@ -1,4 +1,5 @@
 #include "inputThread.h"
+#include "data.c"
 
 //takes in an buffer with the size of the data in the buffer. It goes through byte by byte and flips the endianess of the data.
 void *flipEndian(void *buff, int size) {
