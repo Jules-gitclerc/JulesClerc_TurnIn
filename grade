@@ -1,0 +1,15 @@
+ex0 - serverClient
+	compiles: no
+	works:
+	runtime-errors:
+	notes: seems like you may have included the wrong files, or your Makefile is wrong, fix it and let me know
+ex1 - dataThread
+	compiles: yes
+	works: yes
+	runtime-errors: yes, use of uninitialsed value
+	notes: must press enter and escape rather than just escape to exit
+ex2 - p2p
+	compiles: no
+	works:
+	runtime-errors:
+	notes: possible linker error, "multiple definitions of 'runningServer' fix and let me know
