@@ -19,7 +19,7 @@ void runNode(void (*processData)(void *, bool), void (*welcome)(void), void (*pa
         pthread_create(&client, &attr, runClient, bl_client);
     }
 
-    s = setUpConnections();
+    s = setUpServerConnection();
     if (s != NULL) {
         printf("[server started]\n");
         pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);

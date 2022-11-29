@@ -32,7 +32,7 @@ extern void *welcomeMessage;
 extern int welcomeSize;
 extern Server *s;
 
-Server* setUpConnections();
+Server* setUpServerConnection();
 void closeServer(Server *s);
 void sendAll(Server *s, char *buffer, int current);
 int addNewClient(Server *s);

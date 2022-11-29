@@ -4,7 +4,7 @@ Server *s = NULL;
 void *welcomeMessage = NULL;
 int welcomeSize = 0;
 
-Server *setUpConnections() {
+Server *setUpServerConnection() {
     Server *s = calloc(sizeof(Server), 1);
     s->sock = socket(AF_INET, SOCK_STREAM, 0);
     s->addr.sin_family = AF_INET;
