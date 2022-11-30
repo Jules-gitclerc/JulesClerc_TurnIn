@@ -24,18 +24,15 @@ void hashBlockData(Block *b, BYTE *buff) {
     free(d);
 }
 
-bool isValidProofOfWork(Block *b) {
-    BYTE *hash = calloc(1, SHA256_BLOCK_SIZE);
-    hashBlock(b, hash);
-    bool valid = true;
-    for (int i = 0; i < b->difficulty; i++) {
-        if (hash[i] != 0) {
-            valid = false;
-            break;
-        }
+bool proofOfWork(Block *b) {
+    srand(time(NULL));
+    int r = rand() % 100;
+    if (r < 50) {
+        b->nonce = rand() % 1000000;
+    } else {
+        b->nonce = rand() % 1000000000;
     }
-    free(hash);
-    return valid;
+    return true;
 }
 
 /* This is where we create a block and do the proof of work algorithm.*/
@@ -49,9 +46,7 @@ Block *makeBlock(Data *d, Block *pre) {
     b->next = NULL;
     hashBlock(pre, b->preHash);
     hashBlockData(b, b->dataHash);
-    while (!isValidProofOfWork(b)) {
-        b->nonce += 1;
-    }
+    proofOfWork(b);
     return b;
 }
 
@@ -146,7 +141,7 @@ void freeBlockchain(Blockchain *bc) {
 
 // saves blockchain data to disk
 void saveChain(char *file, Blockchain *bc) {
-    FILE *fp = fopen(file, "wb");
+    FILE *fp = fopen(file, "w");
     Block *cur = bc->base;
     while (cur != NULL) {
         fwrite(cur, sizeof(Block), 1, fp);
