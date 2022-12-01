@@ -1,5 +1,6 @@
 #![allow(unused)]
 use std::io::stdin;
+use rand::Rng;
 
 pub fn fahrenheit_celsius_converter(temperature: i32, f2c: bool) -> f32 {
     if f2c {
@@ -58,6 +59,78 @@ pub fn input_number(high: u32) -> Option<u32> {
     match num {
         Ok(n) => if n < high { Some(n) } else { None },
         Err(_) => None,
+    }
+}
+
+// enum Card {
+//     Diamond(String),
+//     Club(String),
+//     Heart(String),
+//     Spade(String)
+// }
+// pub fn draw_card() -> Card {
+//     let mut rng = rand::thread_rng();
+//     let suit = rng.gen_range(0, 4);
+//     let card = rng.gen_range(1, 14);
+//     let binding = card.to_string();
+//     let card = match card {
+//         1 => "Ace",
+//         11 => "Jack",
+//         12 => "Queen",
+//         13 => "King",
+//         _ => &binding,
+//     };
+//     match suit {
+//         0 => Card::Diamond(card.to_string()),
+//         1 => Card::Heart(card.to_string()),
+//         2 => Card::Spade(card.to_string()),
+//         3 => Card::Club(card.to_string()),
+//         _ => Card::Diamond(card.to_string()),
+//     }
+// }
+/*Takes in input from the user. It takes 2 Strings from the user and parses them into u8s. Those u8s are then returned as a tuple. This Tuple represents coordinates in a square field of with sides the length of side. The coordinates of the square are from 0 – size. So if the user inputs a number equal to or greater than size it is considered out of bounds.
+You must handle all errors and edge cases that might occur. If the user inputs something that is not a number or the number they input is out of bounds. The function continues until the user has successfully inputs 2 numbers or there is an error with input, in which case an invalid tuple (size, size) is passed back.*/
+pub fn input_coord(size: u8) -> (u8, u8){
+    let mut x = 0;
+    let mut y = 0;
+    let mut input = String::new();
+    let mut input2 = String::new();
+    let mut valid = false;
+    while !valid {
+        println!("enter coordinate for {} x {}:", size, size);
+        stdin().read_line(&mut input).unwrap();
+        let num = input.trim().parse::<u8>();
+        let value = input.trim();
+        match num {
+            Ok(n) => if n < size { x = n; valid = true; } else { println!("{} is is out of bounds on a board of size {}", n, size); },
+            Err(_) => println!("\"{}\" is not a number, error: invalid digit found in string", value),
+        }
+    }
+    valid = false;
+    while !valid {
+        println!("enter coordinate for {} x {}:", size, size);
+        stdin().read_line(&mut input2).unwrap();
+        let num = input2.trim().parse::<u8>();
+        let value = input2.trim();
+        match num {
+            Ok(n) => if n < size { x = n; valid = true; } else { println!("{} is is out of bounds on a board of size {}", n, size); },
+            Err(_) => println!("\"{}\" is not a number, error: invalid digit found in string", value),
+        }
+    }
+    (x, y)
+}
+
+pub fn print_board(exes:[(u8, u8);5], oes: [(u8, u8);5]) {
+    let mut board = [['-'; 5]; 5];
+    for i in (0..3).rev() {
+        board[exes[i].0 as usize][exes[i].1 as usize] = 'X';
+        board[oes[i].0 as usize][oes[i].1 as usize] = 'O';
+    }
+    for i in (0..3).rev() {
+        for j in (0..3).rev() {
+            print!("{} ", board[i][j]);
+        }
+        println!();
     }
 }
 
