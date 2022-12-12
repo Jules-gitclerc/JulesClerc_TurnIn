@@ -1,0 +1,39 @@
+-----------------------
+ ex0 - serverClient
+-----------------------
+	compiles ------ 10/10
+
+	works --------- 10/10
+
+	leak-proof ---- 05/00
+
+	notes
+
+-----------------------
+ ex1 - dataThread
+-----------------------
+	compiles ------ 10/10
+
+	works --------- 10/10
+
+	leak-proof ---- 00/00
+
+	notes
+		Invalid read of size 1 (main.c:43)
+		2 memory leaks
+
+-----------------------
+ ex2 - p2p
+-----------------------
+	compiles ------ 00/10
+
+	works --------- 00/10
+
+	leak-proof ---- 00/00
+
+	notes
+		didn't compile, multiple definition of RunningServer and RunningClient
+
+-----------------------
+total ----------- 45/40  
+
