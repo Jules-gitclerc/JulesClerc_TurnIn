@@ -8,3 +8,7 @@ ConID, Ticker, Price, Bar Count, Volume, High, Low, Current, WAP, VWAP
 76792991, TSLA, 171.48, 16634, 273447, 177.37, 170.95, 171.48, 177.60, 0
 479624278, BTC, 17032.25, 289, 95.97, 17264.5, 17026, 17032, 17044.3, 0
 495759171, ETH, 1259.9, 152, 658.5, 1283.75, 1255.9, 1259.9, 1260.46, 0
+
+
+# it is perfect. I asked for 10 instruments but you threw in a header with the fields.
+# REMIND ME TO DISCUSS THIS IN CLASS ITS IMPORTANT.
