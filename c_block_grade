@@ -1,0 +1,114 @@
+-----------------------
+Blockchain Structure
+-----------------------
+	compiles -------- 05/05
+
+	works ----------- 12/15
+		makeBlock------ 2/4
+		addBlock------- 2/2
+		validateChain-- 4/4
+		printBlock----- 1/1
+		printChain----- 1/1
+		freeBlockchain- 1/1
+		saveChain------ 1/1
+		loadChain------ 0/1
+-----------------------
+	leak-proof ---- 00/00
+==7535== Conditional jump or move depends on uninitialised value(s)
+==7535==    at 0x49A74A3: __vfprintf_internal (vfprintf-process-arg.c:58)
+==7535==    by 0x499C81E: printf (printf.c:33)
+==7535==    by 0x109908: printBlock (block.c:105)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== 
+==7535== Use of uninitialised value of size 8
+==7535==    at 0x499BC2B: _itoa_word (_itoa.c:177)
+==7535==    by 0x49A72B4: __vfprintf_internal (vfprintf-process-arg.c:164)
+==7535==    by 0x499C81E: printf (printf.c:33)
+==7535==    by 0x109908: printBlock (block.c:105)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== 
+==7535== Conditional jump or move depends on uninitialised value(s)
+==7535==    at 0x499BC3C: _itoa_word (_itoa.c:177)
+==7535==    by 0x49A72B4: __vfprintf_internal (vfprintf-process-arg.c:164)
+==7535==    by 0x499C81E: printf (printf.c:33)
+==7535==    by 0x109908: printBlock (block.c:105)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== 
+==7535== Conditional jump or move depends on uninitialised value(s)
+==7535==    at 0x49A7BCE: __vfprintf_internal (vfprintf-process-arg.c:174)
+==7535==    by 0x499C81E: printf (printf.c:33)
+==7535==    by 0x109908: printBlock (block.c:105)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== 
+Block #0
+==7535== Use of uninitialised value of size 8
+==7535==    at 0x499BBC2: _itoa_word (_itoa.c:178)
+==7535==    by 0x49A72B4: __vfprintf_internal (vfprintf-process-arg.c:164)
+==7535==    by 0x499C81E: printf (printf.c:33)
+==7535==    by 0x10994C: printBlock (block.c:108)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== 
+==7535== Conditional jump or move depends on uninitialised value(s)
+==7535==    at 0x499BBD4: _itoa_word (_itoa.c:178)
+==7535==    by 0x49A72B4: __vfprintf_internal (vfprintf-process-arg.c:164)
+==7535==    by 0x499C81E: printf (printf.c:33)
+==7535==    by 0x10994C: printBlock (block.c:108)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== 
+==7535== Conditional jump or move depends on uninitialised value(s)
+==7535==    at 0x49A7BCE: __vfprintf_internal (vfprintf-process-arg.c:174)
+==7535==    by 0x499C81E: printf (printf.c:33)
+==7535==    by 0x10994C: printBlock (block.c:108)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== 
+prev: 0000000000000000000000000000000000000000000000000000000000000000
+==7535== Use of uninitialised value of size 8
+==7535==    at 0x499BBC2: _itoa_word (_itoa.c:178)
+==7535==    by 0x49A72B4: __vfprintf_internal (vfprintf-process-arg.c:164)
+==7535==    by 0x499C81E: printf (printf.c:33)
+==7535==    by 0x1099A4: printBlock (block.c:113)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== 
+==7535== Conditional jump or move depends on uninitialised value(s)
+==7535==    at 0x499BBD4: _itoa_word (_itoa.c:178)
+==7535==    by 0x49A72B4: __vfprintf_internal (vfprintf-process-arg.c:164)
+==7535==    by 0x499C81E: printf (printf.c:33)
+==7535==    by 0x1099A4: printBlock (block.c:113)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== Conditional jump or move depends on uninitialised value(s)
+==7535==    at 0x49A7BCE: __vfprintf_internal (vfprintf-process-arg.c:174)
+==7535==    by 0x499C81E: printf (printf.c:33)
+==7535==    by 0x1099A4: printBlock (block.c:113)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== 
+data: 0000000000000000000000000000000000000000000000000000000000000000
+==7535== Use of uninitialised value of size 8
+==7535==    at 0x1099C1: printBlock (block.c:116)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+==7535== 
+==7535== 
+==7535== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==7535==  Access not within mapped region at address 0x8
+==7535==    at 0x1099C1: printBlock (block.c:116)
+==7535==    by 0x109A35: printChain (block.c:125)
+==7535==    by 0x10941B: main (main.c:31)
+
+	notes
+		The proof of work function doesn't work. Instead of creating a hash with leading 0s, it simply comes up with a random nonce, which is the same for all blocks. 
+		The save and or the load function is not working properly. The data hash and previous hash are saved and loaded correctly, but the data itself is not loaded properly as every node ends up with 0.
+-----------------------
+	
+-----------------------
+total ----------- 17/20  
+

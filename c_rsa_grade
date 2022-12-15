@@ -1,0 +1,22 @@
+-----------------------
+RSA Signatures
+-----------------------
+	compiles ---------- 00/05
+
+	works ------------- 00/15
+		makeKeyPair-------- 0/2
+		CryptData --------- 0/1
+		printKey----------- 0/1
+		signTransaction---- 0/5
+		decryptTransaction- 0/5
+		printTransaction--- 0/1
+-----------------------
+	leak-proof -------- 00/00
+
+	notes
+
+-----------------------
+	
+-----------------------
+total ----------- 00/20  
+
