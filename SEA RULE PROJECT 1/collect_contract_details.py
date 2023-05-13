@@ -77,7 +77,7 @@ for con_id, (sec_type) in contracts.items():
         rows.append(row)
         txt_data += ', '.join(map(str, row)) + '\n'
 
-save_to_csv('bond.csv', header, rows)
-save_to_txt('bond.txt', txt_data)
+save_to_csv('bonds_contract_details.csv', header, rows)
+save_to_txt('bonds_contract_details.txt', txt_data)
 
 ib.disconnect()
